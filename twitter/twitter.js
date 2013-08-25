@@ -7,7 +7,7 @@
                 // gets a request token
                 cb.__call(
                     "oauth_requestToken",
-                    {oauth_callback: "http://testserver.bscheme.com/bscheme_social_login/twitter/callback.html"},// change the call back url for for extarting the data
+                    {oauth_callback: "http://testserver.bscheme.com/social_login/twitter/callback.html"},// change the call back url for for extarting the data
                     // http://serveraddress/[twitter_project]/callback url //
                     function (reply) {
                         
@@ -49,8 +49,30 @@
                      window.opener.getTwitterUserByAutneticate(query.oauth_verifier);
                     };
                 window.close();
-                
-            
             }
+            
+//        @see:    https://github.com/mynetx/codebird-js
+            //get the user by new autho_varifire with call back url
+         function getTwitterUserByAutneticate(authoTocken)
+         {
+             cb.__call(
+                "oauth_accessToken",
+                {oauth_verifier:authoTocken},
+                function (reply) {
+                    // store the authenticated token, which may be different from the request token (!)
+                    cb.setToken(reply.oauth_token, reply.oauth_token_secret);
+
+                                   cb.__call(
+                                         "account_verifyCredentials",
+                                         {},
+                                         function (user_replay) {
+                                             console.log(user_replay);
+                                             var html = 'user_screen Name :' + user_replay.screen_name + ',  user_replay.name: '+ user_replay.name + ', user_id:'+ user_replay.id;
+                                             document.getElementById('tuserinfo').innerHTML =html;
+                                         }
+                                     );
+                            }
+                        );
+         }
             
             

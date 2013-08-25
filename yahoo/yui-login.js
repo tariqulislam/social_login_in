@@ -106,7 +106,7 @@
                     throw new Error('Y.login.renderLoginButton - No DOM element with id "'+id+'" found');
                 }
 
-                html = html || '<img src="http://l.yimg.com/a/i/reg/openid/buttons/1_new.png"/>';
+                html = html || '<img src="images/Yahoo-Button.png" height="100px" width="100px">';
 
                 button.set('innerHTML', html);
 
