@@ -35,9 +35,8 @@
     
     <!--  Start wind Live social login -->
     <script src="http://js.live.net/v5.0/wl.js" type="text/javascript"></script>
-
     <script src="winlive/winlive.js" type="text/javascript"></script>
-     
+   
        <p>Connect to display a welcome greeting.</p>
         <div id="first_name"></div>
         <div id="last_name"></div>
@@ -48,6 +47,7 @@
          
         
   <div id="signInButton"></div>
+   
     <!--  End wind Live social login -->
     <!--     start Twitter social login   -->
     <script type="text/javascript" src="twitter/sha1.js"></script>
